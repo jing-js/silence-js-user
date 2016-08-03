@@ -2,19 +2,22 @@
 
 class SessionUser {
   constructor() {
-    this._attrs = null; 
+    this.sessionId = null;
+    this.isLogin = false;
+    this._attrs = null;
   }
   get attrs() {
-    if (!this._attrs) {
-      this._attrs = new Map();
+    if (this._attrs === null) {
+      this._attrs = Object.create(null);
     }
     return this._attrs;
   }
-  get id() {
-    return this.attrs.get('id');
-  }
-  setAttribute(attrName, attrValue) {
-
+  assign(identity) {
+    for(let p in identity) {
+      if (typeof identity[p] !== 'undefined') {
+        this.attrs[p] = identity[p];
+      }
+    }
   }
 }
 
