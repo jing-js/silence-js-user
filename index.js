@@ -2,9 +2,18 @@
 
 class SessionUser {
   constructor() {
+    this.$$freeListIsUsed = true;
     this.sessionId = null;
     this.isLogin = false;
     this._attrs = null;
+  }
+  $$freeListInit() {
+    this.sessionId = null;
+    this.isLogin = false;
+    this._attrs = null;
+  }
+  $$freeListFree() {
+    this.$$freeListInit();
   }
   get attrs() {
     if (this._attrs === null) {

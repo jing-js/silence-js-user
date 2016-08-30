@@ -1,6 +1,6 @@
 {
   "name": "silence-js-user",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "SessionUser for silence-js",
   "main": "index.js",
   "scripts": {
