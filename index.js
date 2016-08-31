@@ -11,9 +11,13 @@ class SessionUser {
     this.sessionId = null;
     this.isLogin = false;
     this._attrs = null;
+    this.$$freeListIsUsed = true;
   }
   $$freeListFree() {
-    this.$$freeListInit();
+    this.sessionId = null;
+    this.isLogin = false;
+    this._attrs = null;
+    this.$$freeListIsUsed = false;
   }
   get attrs() {
     if (this._attrs === null) {
